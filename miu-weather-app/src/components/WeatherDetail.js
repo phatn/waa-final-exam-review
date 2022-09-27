@@ -7,6 +7,7 @@ export default function WeatherDetail() {
 
     const params = useParams();
 
+    // State from Context
     const {themeColorState, setThemeColorState} = useContext(ThemeColorContext);
 
     const initialState = {
@@ -16,6 +17,7 @@ export default function WeatherDetail() {
 
     const [weatherState, setWeatherState] = useState(initialState);
 
+    // Local state to track theme changed
     const [themeState, setThemeState] = useState(themeColorState);
 
     useEffect(() => {
