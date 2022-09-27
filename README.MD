@@ -1,13 +1,9 @@
-## Day 1
-1. Props
-2. State
+## weather-backend is a mock weather api
+1. cd to weather-backend
+2. npm install
+3. node index.js
 
-## Day 2
-1. UseContext 
-2. UseEffect
-3. Axios
-
-## Day 3
-1. Redux 
-2. UseRef 
-3. Use Router & Params
+## miu-weather-app is a react app
+1. cd to miu-weather-app
+2. npm install
+3. npm start
