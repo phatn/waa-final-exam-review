@@ -1,10 +1,13 @@
-import {useEffect, useState} from "react";
-import {useParams} from "react-router";
-import {default as axios} from "axios";
+import { useContext, useEffect, useState } from "react";
+import { useParams } from "react-router";
+import { default as axios } from "axios";
+import {ThemeColorContext} from "../ThemeColorContext";
 
 export default function WeatherDetail() {
 
     const params = useParams();
+
+    const {themeColorState, setThemeColorState} = useContext(ThemeColorContext);
 
     const initialState = {
         weather: null,
@@ -12,6 +15,8 @@ export default function WeatherDetail() {
     }
 
     const [weatherState, setWeatherState] = useState(initialState);
+
+    const [themeState, setThemeState] = useState(themeColorState);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -23,15 +28,12 @@ export default function WeatherDetail() {
         fetchData();
     }, [])
 
-
-    const [themeColor, setThemeColor] = useState('Navy');
-
     const onChangeClicked = () => {
-        console.log(`Current Theme Color: ${themeColor}`);
+        setThemeColorState(themeState);
     }
 
     const onThemeColorChanged = (e) => {
-        setThemeColor(e.target.value);
+        setThemeState(e.target.value);
     }
 
     return (
@@ -44,7 +46,7 @@ export default function WeatherDetail() {
                     <p>Humidity: {weatherState.weather.humidity}</p>
                     <p>wind: {weatherState.weather.wind}</p>
                     <p>
-                        Theme Color: <input type='text' name='theme-color' value={themeColor} onChange={onThemeColorChanged}/>
+                        Theme Color: <input type='text' name='theme-color' value={themeState} onChange={onThemeColorChanged}/>
                         <button onClick={onChangeClicked}>Change</button>
                     </p>
                 </div>
