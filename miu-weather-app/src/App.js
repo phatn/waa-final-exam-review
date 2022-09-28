@@ -6,7 +6,7 @@ import { ThemeColorContext } from "./ThemeColorContext";
 import {useState} from "react";
 
 function App() {
-    const [themeColorState, setThemeColorState] = useState('Nav');
+    const [themeColorState, setThemeColorState] = useState('Navy');
 
       return (
         <div className="App">
