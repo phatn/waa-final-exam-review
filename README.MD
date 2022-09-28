@@ -7,3 +7,8 @@
 1. cd to miu-weather-app
 2. npm install
 3. npm start
+
+## movie-recommendation
+1. cd to movie-recommendation
+2. npm install
+3. npm start
