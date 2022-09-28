@@ -28,3 +28,6 @@ yarn-error.log*
 /miu-weather-app/.idea/modules.xml
 /miu-weather-app/.idea/vcs.xml
 /miu-weather-app/.idea/inspectionProfiles/Project_Default.xml
+/movie-recommendation/.idea/vcs.xml
+/movie-recommendation/.idea/movie-recommendation.iml
+/movie-recommendation/.idea/modules.xml

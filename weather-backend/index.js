@@ -50,6 +50,27 @@ app.post('/api/jobs', (req, res) => {
 })
 
 
+app.get('/api/users/me', (req, res) => {
+    const token = req.header('Authorization');
+    console.log(`Token: ${token}`);
+
+    res.json({
+        id: "111",
+        email: "uninan@miu.edu",
+        firstname: "Umur",
+        lastname: "Inane"
+    });
+})
+
+app.get('/api/movies', (req, res) => {
+    res.json(
+        [
+            { id: 1, title: "Back to the future", genre: "sci-fi"},
+            { id: 2, title: "Harry Potter and the Sorcerer's Stones", genre: "adventure"}
+        ]
+    );
+})
+
 app.put('/api/jobs', (req, res) => {
     const job = req.body;
     let index = JOBS.findIndex(j => j.id == job.id);
